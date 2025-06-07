@@ -1,0 +1,9 @@
+.env
+National_Save/
+National/
+Personal_Save/
+Personal/
+venv/
+__pycache__/
+vector_stores/
+data_sources/

@@ -1,0 +1,17 @@
+# openai
+langchain
+# langchain-openai
+langchain_community
+sentence-transformers
+faiss-cpu
+pyyaml
+requests
+beautifulsoup4
+apscheduler
+python-dotenv
+tiktoken
+newsapi-python
+google-generativeai
+sentence-transformers
+torch
+langchain_huggingface
