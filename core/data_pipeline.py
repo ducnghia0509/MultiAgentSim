@@ -23,7 +23,7 @@ AGENT_NEWSAPI_CONFIG = {
         {"query": "Hamas-Israel conflict OR Ukraine war OR Sudan war", "language": "en", "page_size": 20},
         {"query": "Paris Olympics 2024 OR space race OR AI summit 2025", "language": "en", "page_size": 20},
         {"query": "Type 5 diabetes OR climate change OR COP30", "language": "en", "page_size": 20},
-        {"query": "Donald Trump AND Elon Musk OR DOGE OR government efficiency", "language": "en", "page_size": 20},
+        {"query": "Donald Trump AND Elon Musk OR government efficiency", "language": "en", "page_size": 20},
         {"category": "technology", "country": "us", "page_size": 10},
     ],
     "usa_nation": [

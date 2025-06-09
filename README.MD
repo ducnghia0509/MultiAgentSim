@@ -13,5 +13,5 @@ Key features:
 
 ## Commands
 - source venv/Scripts/activate
-- streamlit run app/streamlit_app.py --server.runOnSave false
+- streamlit run app/streamlit_app.py 
 - python main.py

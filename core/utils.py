@@ -3,7 +3,6 @@ import re
 import unicodedata
 
 def num_tokens_from_string(string: str, encoding_name: str = "cl100k_base") -> int:
-    """Returns the number of tokens in a text string."""
     encoding = tiktoken.get_encoding(encoding_name)
     num_tokens = len(encoding.encode(string))
     return num_tokens
@@ -17,8 +16,6 @@ def clean_text(text: str) -> str:
 
 def split_text_into_chunks(text: str, max_tokens_per_chunk: int = 400, overlap: int = 50):
     """Splits text into chunks with overlap, respecting sentence boundaries if possible."""
-    # A more sophisticated chunking strategy would use LangChain's TextSplitters
-    # This is a simplified version
     words = text.split()
     chunks = []
     current_chunk_words = []

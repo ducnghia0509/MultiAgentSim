@@ -2,7 +2,7 @@ import yaml
 import os
 from langchain_community.vectorstores import FAISS
 from langchain.text_splitter import RecursiveCharacterTextSplitter
-from core.utils import num_tokens_from_string, clean_text
+from core.utils import clean_text
 import google.generativeai as genai
 from langchain_huggingface import HuggingFaceEmbeddings
 from dotenv import load_dotenv
@@ -133,7 +133,6 @@ class CharacterAgent:
                 gemini_history.append({'role': 'model', 'parts': [{'text': ai_msg}]})
         return gemini_history
 
-    # SỬA ĐỔI 3: Toàn bộ logic trong hàm think_and_respond được cập nhật
     def think_and_respond(self, user_query: str, conversation_history: list = None):
         print(f"\n--- {self.persona.get('full_name', self.agent_id)} responding to: '{user_query}' (using Gemini & Local Embeddings) ---")
 
@@ -172,7 +171,7 @@ class CharacterAgent:
         system_prompt_with_instructions = f"""
         {self.system_prompt_content}
 
-        HƯỚNG DẪN ĐẶC BIỆT CHO LƯỢT NÀY:
+        Câu trả lời của bạn nên tuân theo các bước:
         1. Phân tích bối cảnh sau:
            - Thông tin liên quan (RAG): {rag_context_str if rag_context_str else 'Không có thông tin RAG cụ thể.'}
            - Câu hỏi/Chủ đề hiện tại: {user_query}
@@ -182,8 +181,8 @@ class CharacterAgent:
            [Suy nghĩ của bạn ở đây]
            </thinking>
 
-        3. SAU ĐÓ, đưa ra PHÁT BIỂU CHÍNH THỨC của bạn.
-           Phát biểu này cần NGẮN GỌN, súc tích, đi thẳng vào vấn đề và thể hiện đúng vai trò của bạn.
+        3. SAU ĐÓ, đưa ra câu trả lời của bạn.
+           Câu nói cần NGẮN GỌN, súc tích, đi thẳng vào vấn đề và thể hiện đúng vai trò của bạn.
            Tránh lặp lại câu hỏi hoặc thông tin không cần thiết từ RAG.
         """
 
